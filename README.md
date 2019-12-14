@@ -1,2 +1,1 @@
-# Auteur
 # auteur
