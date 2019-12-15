@@ -21,7 +21,7 @@ export default class Layout {
 
 		if (options.minify) {
 			html = minifier.minify(html, {
-				collapseWhitespace: true
+				collapseWhitespace: true,
 			});
 		}
 
