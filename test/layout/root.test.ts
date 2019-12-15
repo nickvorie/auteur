@@ -1,12 +1,10 @@
 import RootLayout from "../../src/impl/layouts/root/index";
 
-test("layout.body", () => {
+test("layout.root", () => {
 	const rootLayout = new RootLayout();
 
-	const html = rootLayout.compile().render({
-		body: "test",
-	}, {
-		minify: true,
+	const html = rootLayout.render({
+		content: "test",
 	});
 
 	expect(html).toContain("<body>test</body>");
