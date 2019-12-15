@@ -8,7 +8,7 @@
 	"scripts": {
 		"test": "jest --forceExit --verbose",
 		"clean": "rimram dist",
-		"build:ts": "tsc",
+		"build:ts": "tsc && tscpaths --project tsconfig.json -s src -o dist",
 		"build:html": "gulp html",
 		"dist": "npm-run-all test clean --parallel build:*"
 	},
@@ -23,6 +23,7 @@
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.0",
 		"ts-jest": "^24.2.0",
+		"tscpaths": "0.0.9",
 		"typescript": "^3.7.3"
 	},
 	"files": [
