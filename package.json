@@ -7,7 +7,8 @@
 	},
 	"scripts": {
 		"test": "jest --forceExit --verbose",
-		"build": "npm-run-all build:clean --parallel build:ts build:html",
+		"lint": "eslint ./",
+		"build": "npm-run-all lint build:clean --parallel build:ts build:html",
 		"build:dist": "npm-run-all test build",
 		"build:clean": "rimraf dist",
 		"build:html": "gulp html",
