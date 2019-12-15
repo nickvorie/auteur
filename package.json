@@ -6,9 +6,10 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "jest --forceExit --verbose --maxWorkers=1",
-		"lint": "eslint ./",
-		"build": "npm-run-all lint build:clean --parallel build:ts build:html",
+		"test": "npm run lint:check && jest --forceExit --verbose --maxWorkers=1",
+		"lint:check": "eslint ./",
+		"lint:fix": "eslint --fix-dry-run ./",
+		"build": "npm-run-all lint:fix build:clean --parallel build:ts build:html",
 		"build:dist": "npm-run-all test build",
 		"build:clean": "rimraf dist",
 		"build:html": "gulp html",
