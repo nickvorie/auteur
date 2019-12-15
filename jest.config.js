@@ -10,7 +10,7 @@ module.exports = {
 
 	transform: {
 		"^.+\\.tsx?$": "ts-jest",
-		"\\.html$": "<rootDir>/test/transform/html.js"
+		"\\.(html|xml|txt)$": "<rootDir>/test/transform/string.transformer.js"
 	},
 
 	moduleFileExtensions: ["js", "ts"],
