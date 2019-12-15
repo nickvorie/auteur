@@ -53,6 +53,7 @@ module.exports = {
     quotes: ["error", "double"],
     indent: ["error", "tab"],
     "no-tabs": ["off"],
+    "class-methods-use-this": ["off"],
     "no-unused-vars": ["off"],
     "lines-between-class-members": ["off"],
     "import/extensions": ["off"],
