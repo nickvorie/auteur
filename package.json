@@ -6,7 +6,7 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "jest --forceExit --verbose",
+		"test": "jest --forceExit --verbose --maxWorkers=1",
 		"lint": "eslint ./",
 		"build": "npm-run-all lint build:clean --parallel build:ts build:html",
 		"build:dist": "npm-run-all test build",
