@@ -15,6 +15,7 @@
 	"author": "Nicholas Vorie",
 	"license": "ISC",
 	"devDependencies": {
+		"@types/html-minifier": "^3.5.3",
 		"@types/jest": "^24.0.23",
 		"@types/lodash": "^4.14.149",
 		"@types/node": "^12.12.17",
@@ -31,6 +32,7 @@
 	],
 	"dependencies": {
 		"handlebars": "^4.5.3",
+		"html-minifier": "^4.0.0",
 		"lodash": "^4.17.15"
 	}
 }
