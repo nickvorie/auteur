@@ -1,5 +1,6 @@
 import handlebars from "handlebars";
 import minifier from "html-minifier";
+import _ from "lodash";
 
 import RenderOptions from "@/lib/RenderOptions";
 
@@ -9,14 +10,22 @@ export default class Layout {
 
 	constructor(templateString: string) {
 		this.templateString = templateString;
-	}
-
-	public compile(): Layout {
 		this.compiled = handlebars.compile(this.templateString);
-		return this;
 	}
 
-	public render(data: object, options: RenderOptions = {}): string {
+	public render(data: object = {}, options: RenderOptions = { minify: true }): string {
+		const preRenderResult = this.preRender();
+
+		if (preRenderResult) {
+			if (preRenderResult.data) {
+				_.merge(data, preRenderResult.data);
+			}
+
+			if (preRenderResult.options) {
+				_.merge(options, preRenderResult.options);
+			}
+		}
+
 		let html = this.compiled(data);
 
 		if (options.minify) {
@@ -26,5 +35,9 @@ export default class Layout {
 		}
 
 		return html;
+	}
+
+	protected preRender(): { data?: object, options?: RenderOptions } | null {
+		return null;
 	}
 }
