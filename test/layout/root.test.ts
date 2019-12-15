@@ -1,7 +1,7 @@
-import BodyLayout from "../../src/impl/layouts/root/index";
+import RootLayout from "../../src/impl/layouts/root/index";
 
 test("layout.body", () => {
-	const rootLayout = new BodyLayout();
+	const rootLayout = new RootLayout();
 
 	const html = rootLayout.compile().render({
 		body: "test",
